@@ -56,7 +56,7 @@ export default function Home() {
   ]
 
   const trendingHashtags = [
-    { tag: "#TrendingNow", uses: "20K+", growth: "+15%", color: "text-purple-400" },
+    { tag: "#TrendingNow", uses: "20K+", growth: "+15%", color: "text-purytple-400" },
     { tag: "#AIRevolution", uses: "15K+", growth: "+25%", color: "text-blue-400" },
     { tag: "#ContentCreator", uses: "30K+", growth: "+10%", color: "text-green-400" },
     { tag: "#SocialMedia", uses: "25K+", growth: "+20%", color: "text-pink-400" },
@@ -68,7 +68,14 @@ export default function Home() {
     { keyword: "Content Strategy 2024", searches: "45K", trend: "🔥 Hot" },
     { keyword: "Viral Marketing Tips", searches: "40K", trend: "→ Stable" },
   ]
-
+  // task manager
+  // scheduling
+  // ideate --> creating a new video planner
+  // trending
+  // settigns
+  // bot that tells about channel information
+  // competitor analysis
+  // analytics
   const trendingVideos = [
     {
       title: "How to Go Viral on Social Media",
@@ -91,17 +98,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900 via-slate-900 to-black">
       <div className="flex">
-        {/* Left Sidebar Navigation */}
-        <div className={`relative transition-all duration-300 ease-in-out ${isSidebarOpen ? 'w-64' : 'w-20'} min-h-screen border-r border-gray-800/50`}>
-          {/* Toggle Button - Moved to middle */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="absolute -right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-gray-800 border border-gray-700 text-gray-400 hover:text-white z-50 shadow-lg"
-          >
-            <ChevronLeft className={`w-4 h-4 transition-transform duration-300 ${!isSidebarOpen ? 'rotate-180' : ''}`} />
-          </motion.button>
+        <div className={`relative transition-[width] duration-300 ease-in-out ${isSidebarOpen ? 'w-64' : 'w-20'} min-h-screen border-r border-gray-800/50`}>
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 z-50">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              className="absolute -right-4 p-2 rounded-full bg-gray-800 border border-gray-700 text-gray-400 hover:text-white shadow-lg"
+            >
+              <ChevronLeft className={`w-4 h-4 transition-transform duration-300 ${!isSidebarOpen ? 'rotate-180' : ''}`} />
+            </motion.button>
+          </div>
 
           <div className="py-8 px-4 space-y-6">
             {features.map((feature) => (
@@ -112,10 +119,17 @@ export default function Home() {
                 className="group relative flex items-center cursor-pointer"
               >
                 <div className={`relative flex items-center w-full ${isSidebarOpen ? 'px-4' : 'justify-center'}`}>
-                  <div className={`p-2 rounded-lg text-gray-200 group-hover:text-white transition-all duration-300 ${!isSidebarOpen ? 'hover:bg-gray-800/50 rounded-xl' : ''}`}>
-                    <div className="transition-transform duration-300 group-hover:scale-110">
-                      <feature.icon className="w-6 h-6" strokeWidth={1.5} />
-                    </div>
+                  <div className={`
+                    p-2 
+                    rounded-lg 
+                    text-gray-200 
+                    transition-all 
+                    duration-300
+                    group-hover:bg-gray-800/50
+                    group-hover:text-white
+                    ${!isSidebarOpen && 'hover:scale-110'}
+                  `}>
+                    <feature.icon className="w-5 h-5" strokeWidth={1.5} />
                   </div>
                   {isSidebarOpen && (
                     <span className="ml-3 font-medium text-gray-200 group-hover:text-white transition-colors">
