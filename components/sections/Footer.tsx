@@ -32,15 +32,14 @@ export default function Footer() {
       color: string
     }> = []
     
-    // Array of gradient colors
+
     const colors = [
-      { r: 147, g: 51, b: 234 },  // Purple
-      { r: 45, g: 212, b: 191 },  // Teal
-      { r: 79, g: 70, b: 229 },   // Indigo
-      { r: 236, g: 72, b: 153 }   // Pink
+      { r: 147, g: 51, b: 234 },  
+      { r: 45, g: 212, b: 191 },  
+      { r: 79, g: 70, b: 229 },   
+      { r: 236, g: 72, b: 153 }   
     ]
-    
-    // Create particles with different colors
+
     for (let i = 0; i < 100; i++) {
       const color = colors[Math.floor(Math.random() * colors.length)]
       particles.push({
@@ -94,7 +93,6 @@ export default function Footer() {
 
   return (
     <footer className="relative py-20 px-4 overflow-hidden">
-      {/* UV Canvas Background with darker gradient overlay */}
       <canvas 
         ref={canvasRef}
         className="absolute inset-0 w-full h-full opacity-30"
