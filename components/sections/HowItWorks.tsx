@@ -81,8 +81,11 @@ export default function HowItWorks() {
                 className="group relative"
               >
                 {step.hasShinyBorder && (
-                  <ShinyBorder gradient={step.borderGradient} />
-                )}
+  <ShinyBorder gradient={step.borderGradient ?? 'default-gradient'} />
+)}
+
+                
+                
                 <Slot className={cn(
                   "relative block h-full rounded-2xl overflow-hidden",
                   !step.hasShinyBorder && "border border-white/[0.1]",
